@@ -1,0 +1,38 @@
+<!--TODO: Make it look nicer-->
+<div class="card">
+  <div class="card-header" style="text-align:center">
+    {{title}}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table" *ngIf="courses">
+        <tbody *ngFor="let course of courses">
+          <app-course-card [course]=course [courseColor]=courseColor
+          (courseSelected)="onCourseSelected($event)">
+
+          </app-course-card>
+          <!-- <div class="card-header">
+            <p>
+              <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                {{course?.ExamName}}
+              </button>
+            </p>
+            <div id="collapseExample" [ngbCollapse]="isCollapsed">
+              <div class="card">
+                <div class="card-body">
+                  <ul>
+                    <li>ExamID: <span class="card-title">{{course?.ExamID}}</span></li>
+                    <li>CourseID: <span class="card-title">{{course?.CourseID}}</span></li>
+                    <li>CourseExamStatus: <span class="card-title">{{course?.CourseExamStatus}}</span></li>
+                  </ul>
+                </div>
+                <button (click)="ShowStudents(course)">Show students</button>
+              </div>
+            </div>
+          </div> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

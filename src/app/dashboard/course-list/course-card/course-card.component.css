@@ -1,0 +1,51 @@
+#container {
+    position: relative;
+    height: 60px;
+  }
+  #container div {
+    position: absolute;
+  }
+  .top {
+    top: 0;
+  }
+  .right {
+    right: 0;
+  }
+  .bottom {
+    bottom: 0;
+  }
+  .left {
+    left: 0;
+  }
+
+  .rtl{
+    direction: rtl;
+  }
+
+  .jumbotron{
+    text-align: center;
+}
+
+button{
+    display: inline-block;
+}
+
+a{
+  color:blue;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration:none;
+  text-shadow: 1px 1px 1px #555;
+}
+
+.course-green{
+  color: green;
+}
+.course-blue{
+  color: blue
+}
+.course-black{
+  color: black
+}

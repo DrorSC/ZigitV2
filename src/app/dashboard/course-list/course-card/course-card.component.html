@@ -1,0 +1,29 @@
+<div class="card-header">
+  <p>
+    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseElement"
+      [ngClass]="courseColor != 0  ? 
+      (courseColor != 1 ? 
+      (courseColor != 2 ? 'course-black' : 'course-blue') 
+      : 'course-green') 
+      : ''">
+      {{course?.ExamName}}
+    </button>
+  </p>
+  <div id="collapseElement" [ngbCollapse]="isCollapsed">
+    <div id="container">
+      <div class="top left">
+        {{ course.CourseID }}
+      </div>
+      <div class="top right rtl">
+        {{ course.Moed }} | {{ course.Simester }} | {{ course.Year }}
+      </div>
+      <div class="bottom left">
+        <a class="link" (click)="ShowStudents(course)">סטודנטים</a>
+      </div>
+      <div class="bottom right">
+        {{ course.ExamTeacher }}
+      </div>
+    </div>
+  </div>
+</div>

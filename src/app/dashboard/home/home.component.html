@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>ברוכה הבאה  {{ currentUser.UserName }}</h2>
+  <button id="logout" (click)="logout()">יציאה</button>
+
+  <div class="myContainer">
+    <div class="left-child">
+      <app-student-list [currentCourse]=currentCourse [students]=students
+      (studentClicked)="onStudentClicked($event)">
+
+      </app-student-list>
+    </div>
+    <div class="right-child">
+      <app-course-list [courses]=courses [courseColor]=courseColor
+      (courseSelected)="onCourseSelected($event)">
+        
+      </app-course-list>
+    </div>
+  </div>
+</div>

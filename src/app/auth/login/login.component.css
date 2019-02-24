@@ -1,0 +1,17 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+    margin: 10px;
+}
+
+.jumbotron{
+    text-align: center;
+}
+
+.nes-container{
+    width: 500px;
+    display: inline-block;
+}
+
+.nes-field{
+    direction: rtl;
+}

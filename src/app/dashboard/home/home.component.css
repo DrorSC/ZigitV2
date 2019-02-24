@@ -1,0 +1,28 @@
+
+.myContainer{
+    padding: 10px;
+    margin: 10px;
+}
+
+.left-child{
+    float: left;
+    width: 70%;
+    background-color: #0BB3C0;
+    padding: 5px;
+}
+
+.right-child{
+    float: right;
+    width: 30%;
+    min-width: 250px;
+    background-color: blueviolet;
+    padding: 5px;
+}
+
+h2{
+    text-align: center;
+}
+
+*{
+    font-family: 'Press Start 2P', cursive;
+}

@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <div class="nes-container with-title is-centered">
+    <p class="title" style="font-size:1.5em">Login</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="nes-field is-inline">
+        <label for="username">שם משתמש</label>
+        <input type="text" formControlName="username" class="nes-input"
+          [ngClass]="submitted  ? (f.username.errors ? 'is-error' : 'is-success') : 'is-warning'" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="nes-field is-inline">
+        <label for="password">סיסמא</label>
+        <input type="password" formControlName="password" class="nes-input"
+          [ngClass]="submitted  ? (f.password.errors ? 'is-error' : 'is-success') : 'is-warning'" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <div class="nes-field">
+        <button [disabled]="loading" class="nes-btn is-primary">Submit</button>
+        <img *ngIf="loading" src="../../assets/loading.gif" style="width:40px; height:30px;" />
+      </div>
+    </form>
+  </div>
+</div>

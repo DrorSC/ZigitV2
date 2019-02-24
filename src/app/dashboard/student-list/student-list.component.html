@@ -1,0 +1,35 @@
+<!--TODO: fix the current course Name to actually show name-->
+<!--TODO: add sort by (BONUS)-->
+<div class="card">
+  <div class="card-header" style="text-align:center">
+    Student list for course {{ currentCourseName }}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table matSort (matSortChange)="sortData($event)" class="table" *ngIf="students">
+        <tr>
+          <th mat-sort-header="CheckerComments">הערות</th>
+          <th mat-sort-header="ParGrade">ציון</th>
+          <th mat-sort-header="ParLinkToExamFile">סטטוס בחינה</th>
+          <th mat-sort-header="CheckerAssitantArray">בודק</th>
+          <th mat-sort-header="ExamTeacher">שם המרצה</th>
+          <th mat-sort-header="ParId">זיהוי</th>
+          <th mat-sort-header="ParExamStatus">#</th>
+        </tr>
+        <tbody>
+          <tr *ngFor="let student of students" class="clickable-row">
+            <td>{{ student.CheckerComments }}</td>
+            <td>{{ student.ParGrade }}</td>
+            <td>{{ student.ParLinkToExamFile }}</td>
+            <td>{{ student.CheckerAssitantArray }}</td>
+            <td>{{ student.ExamTeacher }}</td>
+            <td>{{ student.ParId }}</td>
+            <td (click)="onStudentClick(student)" style="cursor:cell">
+              {{ student.ParExamStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf='students'>*Click on # column to increment student exam status</p>
+    </div>
+  </div>
+</div>
